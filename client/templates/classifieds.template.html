@@ -1,0 +1,31 @@
+<div class="row">
+  <input class="form-control input-sm search-form" placeholder="search" id="search" type="text" ng-model="$ctrl.search">
+</div>
+<div class="row">
+  <a ui-sref="newPost" class="waves-effect waves-light btn">new posting</a>
+<div class="form-inline">
+  <select ng-options="choice for choice in options" ng-model="$ctrl.selected" ng-init="$ctrl.selected='-created_at'" ng-change="change()"></select>
+</div>
+<br>
+  </div>
+       <div class="well" ng-repeat="post in $ctrl.posts | filter:$ctrl.search | orderBy:$ctrl.selected">
+         <div class="card">
+           <a class="pull-right" ng-click="$ctrl.del(post.id)">
+             <i class="large material-icons">delete_forever</i>
+           </a>
+           <a class="pull-right" ui-sref="edit({id: post.id})">
+             <i class="material-icons">mode_edit</i>
+           </a>
+           <div class="card-image">
+             <img src="{{post.item_image}}">
+             <span class="card-title">{{post.title}}</span>
+           </div>
+           <div class="card-content">
+             <p>{{post.description}}</p>
+           </div>
+           <div class="card-action">
+             <a ui-sref="edit({id: post.id})">{{post.price}}</a>
+           </div>
+         </div>
+       </div>
+     </div>
