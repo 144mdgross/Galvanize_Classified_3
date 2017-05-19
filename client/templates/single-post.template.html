@@ -1,14 +1,16 @@
 <div class="row">
     <h3 class="text-center"> Update Post </h3>
-         <div class="well">
+         <div class="well shadow">
            <div class="media-left">
-             <img src="{{$ctrl.post.item_image}}">
+             <img src="{{$ctrl.post.item_image}}" class="media-object">
+             </div>
+             <div class="media-body">
              <span class="media-heading title">{{$ctrl.post.title}}</span>
-           </div>
-           <div class="media-body">
              <p>{{$ctrl.post.description}}</p>
            </div>
+           <div>
              <h4 class="money">$ {{$ctrl.post.price}}</h4>
+            </div>
          </div>
     </div>
 

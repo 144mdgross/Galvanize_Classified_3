@@ -1,27 +1,29 @@
 <form class="form" novalidate ng-submit="$ctrl.newItem($ctrl.newPost)" name="$ctrl.createPost">
-        <label class="sort" for="title">Title</label>
-        <input id="title" type="text" class="form-control" ng-model="$ctrl.newPost.title" name="title" required>
-        <label class="sort" for="price">Price</label>
-        <input id="price" type="tel" class="form-control" ng-model="$ctrl.newPost.price" name="price" required>
-          <label class="sort" for="description">Description</label>
-          <textarea id="description" name="description" class="form-control" ng-model="$ctrl.newPost.description" required></textarea>
-          <label class="sort" for="image">Image Url (255 character max)</label>
-          <input id="image" ng-model="$ctrl.newPost.item_image" class="form-control" name="item_image" ng-minlength="3" ng-maxlength="255" required>
-          <br>
+    <label class="sort" for="title">Title</label>
+    <input id="title" type="text" class="form-control" ng-model="$ctrl.newPost.title" name="title" required>
+    <label class="sort" for="price">Price</label>
+    <input id="price" type="tel" class="form-control" ng-model="$ctrl.newPost.price" name="price" required>
+    <label class="sort" for="description">Description</label>
+    <textarea id="description" name="description" class="form-control" ng-model="$ctrl.newPost.description" required></textarea>
+    <label class="sort" for="image">Image Url (255 character max)</label>
+    <input id="image" ng-model="$ctrl.newPost.item_image" class="form-control" name="item_image" ng-minlength="3" ng-maxlength="255" required>
+    <br>
     <button type="submit" class="btn btn-primary" ng-class="{'disabled': $ctrl.createPost.$invalid}">Submit</button>
     <a class="pull-right btn btn-info" ui-sref="classifieds">home</a>
-  </form>
+</form>
 
 <h3> Preview </h3>
-  <div class="row">
-           <div class="well">
-             <div class="media-left">
-               <img src="{{$ctrl.newPost.item_image}}" class="media-object">
-               <span class="media-heading title">{{$ctrl.newPost.title}}</span>
-             </div>
-             <div class="media-body">
-               <p>{{$ctrl.newPost.description}}</p>
-             </div>
-               <h4>$ {{$ctrl.newPost.price}}</h4>
-           </div>
-      </div>
+<div class="row">
+    <div class="well shadow">
+        <div class="media-left">
+            <img src="{{$ctrl.newPost.item_image}}" class="media-object">
+        </div>
+        <div class="media-body">
+            <span class="media-heading title">{{$ctrl.newPost.title}}</span>
+            <p>{{$ctrl.newPost.description}}</p>
+        </div>
+        <div>
+            <h4>$ {{$ctrl.newPost.price}}</h4>
+        </div>
+    </div>
+</div>
