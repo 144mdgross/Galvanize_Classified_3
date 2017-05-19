@@ -1,31 +1,30 @@
 <div class="row">
   <input class="form-control input-sm search-form" placeholder="search" id="search" type="text" ng-model="$ctrl.search">
 </div>
+<br>
 <div class="row">
-  <a ui-sref="newPost" class="waves-effect waves-light btn">new posting</a>
-<div class="form-inline">
-  <select ng-options="choice for choice in options" ng-model="$ctrl.selected" ng-init="$ctrl.selected='-created_at'" ng-change="change()"></select>
+  <div class="form-inline">
+  <a ui-sref="newPost" class="btn btn-info">new posting</a>
+  <label class="pull-right sort" for="sort">Sort By
+  <select class="custom-select pull-right" ng-options="choice for choice in options" ng-model="$ctrl.selected" ng-init="$ctrl.selected='-created_at'" name="sort" ng-change="change()"></select></label>
 </div>
 <br>
   </div>
-       <div class="well" ng-repeat="post in $ctrl.posts | filter:$ctrl.search | orderBy:$ctrl.selected">
-         <div class="card">
+       <div class="well shadow" ng-repeat="post in $ctrl.posts | filter:$ctrl.search | orderBy:$ctrl.selected">
            <a class="pull-right" ng-click="$ctrl.del(post.id)">
              <i class="large material-icons">delete_forever</i>
            </a>
-           <a class="pull-right" ui-sref="edit({id: post.id})">
+           <a class="pull-right edit" ui-sref="edit({id: post.id})">
              <i class="material-icons">mode_edit</i>
            </a>
-           <div class="card-image">
-             <img src="{{post.item_image}}">
-             <span class="card-title">{{post.title}}</span>
+           <div class="media-left">
+             <img src="{{post.item_image}}" class="media-object">
            </div>
-           <div class="card-content">
+           <div class="media-body">
+             <span class="media-heading title">{{post.title}}</span>
              <p>{{post.description}}</p>
            </div>
-           <div class="card-action">
-             <a ui-sref="edit({id: post.id})">{{post.price}}</a>
+           <div>
+             <a ui-sref="edit({id: post.id})">$ {{post.price}}</a>
            </div>
-         </div>
        </div>
-     </div>

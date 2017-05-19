@@ -1,22 +1,20 @@
 <div class="row">
-       <div class="col-md-8">
+    <h3 class="text-center"> Update Post </h3>
          <div class="well">
            <div class="media-left">
              <img src="{{$ctrl.post.item_image}}">
-             <span class="media-heading">{{$ctrl.post.title}}</span>
+             <span class="media-heading title">{{$ctrl.post.title}}</span>
            </div>
            <div class="media-body">
              <p>{{$ctrl.post.description}}</p>
            </div>
-             <h4 class="money"> {{$ctrl.post.price}}</h4>
+             <h4 class="money">$ {{$ctrl.post.price}}</h4>
          </div>
-       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-8">
 
-     <form class="form">
+     <form class="form" novalidate name="$ctrl.updatePost">
            <label for="title">Title</label>
              <input id="title" value="{{$ctrl.post.title}}" type="text" class="form-control" ng-model="$ctrl.edit.title" name="title" required>
              <label for="price">Price</label>
@@ -24,10 +22,11 @@
              <label for="description">Description</label>
                <textarea id="description" class="form-control" ng-model="$ctrl.edit.description" required>{{$ctrl.post.description}}</textarea>
                <label for="image">Image</label>
-               <input id="image" ng-model="$ctrl.edit.item_image" value="{{$ctrl.post.item_image}}" class="form-control" name="item_image" required>
+               <input id="image" ng-model="$ctrl.edit.item_image" value="{{$ctrl.post.item_image}}" class="form-control" name="item_image" ng-minlength="3" ng-maxlength="255" required>
+               <br>
           <div class="form-group">
-         <a class="waves-effect waves-light btn" ng-click="$ctrl.update($ctrl.edit, $ctrl.post.id)">update</a>
+         <a class="btn btn-primary" ng-click="$ctrl.update($ctrl.edit, $ctrl.post.id)" ng-class="{'disabled': $ctrl.updatePost.$invalid}">update</a>
+         <a class="pull-right btn btn-info" ui-sref="classifieds">home</a>
        </div>
        </form>
-     </div>
    </div>

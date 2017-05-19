@@ -8,7 +8,7 @@ angular
     templateUrl: `/templates/classifieds.template.html`
       })
 
-  controller.$inject = ['$state', '$stateParams', '$scope', '$http', 'PostService']
+  controller.$inject = ['$state', '$stateParams', '$scope', '$http']
 
     function controller($state, $stateParams, $scope, $http) {
       const vm = this

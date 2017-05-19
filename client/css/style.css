@@ -1,3 +1,22 @@
-.money {
-  color: lime;
+body {
+  /*background-image: url('https://s-media-cache-ak0.pinimg.com/originals/29/e8/14/29e8144a9316ea85fc887cc6a2bd40f6.jpg');*/
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDIKndfuGfGIJ0kSDZda6d_Zage3Tt-CACdvEm0CB1UxQQD3USqw');
+}
+
+.shadow {
+  box-shadow: 10px 15px 5px rgba(136, 136, 136, .8);
+  margin-bottom: 2em;
+}
+
+.sort {
+  font-size: 1.5em;
+}
+
+.title {
+  font-size: 2em;
+}
+
+img {
+  width: 10em;
+  height: 10em;
 }

@@ -10,10 +10,10 @@ angular
 
   function controller($http, $state, $stateParams) {
     const vm = this
+
     vm.newItem = newItem
 
     function newItem(post) {
-      console.log('post', post);
       $http.post('/classifieds', post)
         .then(listing => {
           $state.go('classifieds')

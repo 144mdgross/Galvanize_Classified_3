@@ -20,6 +20,10 @@ app.use(express.static(path.join(__dirname, '../node_modules')));
 const messages = require('./routes/classifieds.js');
 app.use('/classifieds', messages);
 
+app.use('*', function(req, res, next) {
+  res.sendFile('index.html', {root: path.join(__dirname, '../client')})
+})
+
 const port = process.env.PORT || 3000;
 
 
