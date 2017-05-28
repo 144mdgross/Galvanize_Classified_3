@@ -2,7 +2,7 @@
     <label class="sort" for="title">Title</label>
     <input id="title" type="text" class="form-control" ng-model="$ctrl.newPost.title" name="title" required>
     <label class="sort" for="price">Price</label>
-    <input id="price" type="" class="form-control" ng-model="$ctrl.newPost.price" ng-pattern="/^[\d]?[\d]?(\.[\d][\d]?)?$/" name="price" required>
+    <input id="price" type="" class="form-control" ng-model="$ctrl.newPost.price" ng-pattern="/^[\d]+?(\.[\d][\d]?)?$/" name="price" required>
     <label class="sort" for="description">Description</label>
     <textarea id="description" name="description" class="form-control" ng-model="$ctrl.newPost.description" required></textarea>
     <label class="sort" for="image">Image Url (255 character max)</label>

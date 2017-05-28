@@ -20,7 +20,7 @@
            <label for="title">Title</label>
              <input id="title" ng-value="$ctrl.post.title" type="text" class="form-control" ng-model="$ctrl.edit.title" name="title">
              <label for="price">Price</label>
-             <input id="price" type="" ng-value="$ctrl.post.price" ng-pattern="/^[\d]?[\d]?(\.[\d][\d]?)?$/" class="form-control" ng-model="$ctrl.edit.price" name="price">
+             <input id="price" type="" ng-value="$ctrl.post.price" ng-pattern="/^[\d]+?(\.[\d][\d]?)?$/" class="form-control" ng-model="$ctrl.edit.price" name="price">
              <label for="description">Description</label>
                <textarea id="description" ng-value="$ctrl.post.description" class="form-control" ng-model="$ctrl.edit.description"></textarea>
                <label for="image">Image</label>
