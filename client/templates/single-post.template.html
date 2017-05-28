@@ -18,13 +18,13 @@
 
      <form class="form" novalidate name="$ctrl.updatePost">
            <label for="title">Title</label>
-             <input id="title" value="{{$ctrl.post.title}}" type="text" class="form-control" ng-model="$ctrl.edit.title" name="title" required>
+             <input id="title" ng-value="$ctrl.post.title" type="text" class="form-control" ng-model="$ctrl.edit.title" name="title">
              <label for="price">Price</label>
-             <input id="price" type="tel" value="{{$ctrl.post.price}}" class="form-control" ng-model="$ctrl.edit.price" name="price" required>
+             <input id="price" type="" ng-value="$ctrl.post.price" ng-pattern="/^[\d]?[\d]?(\.[\d][\d]?)?$/" class="form-control" ng-model="$ctrl.edit.price" name="price">
              <label for="description">Description</label>
-               <textarea id="description" class="form-control" ng-model="$ctrl.edit.description" required>{{$ctrl.post.description}}</textarea>
+               <textarea id="description" ng-value="$ctrl.post.description" class="form-control" ng-model="$ctrl.edit.description"></textarea>
                <label for="image">Image</label>
-               <input id="image" ng-model="$ctrl.edit.item_image" value="{{$ctrl.post.item_image}}" class="form-control" name="item_image" ng-minlength="3" ng-maxlength="255" required>
+               <input id="image" ng-model="$ctrl.edit.item_image" ng-value="$ctrl.post.item_image" class="form-control" name="item_image">
                <br>
           <div class="form-group">
          <a class="btn btn-primary" ng-click="$ctrl.update($ctrl.edit, $ctrl.post.id)" ng-class="{'disabled': $ctrl.updatePost.$invalid}">update</a>
